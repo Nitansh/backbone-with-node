@@ -55,7 +55,7 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.listen(3000, function(server){
+app.listen(process.env.PORT  || 3000, function(server){
     console.log("Server Listening at port ");
 });
 
