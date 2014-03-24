@@ -1,0 +1,97 @@
+<style>
+.table-nonfluid {
+   width: auto;
+}
+.accountInformation {
+	padding-top: 0px;
+}
+.customerInformation {
+	margin-bottom: 0px;
+}
+</style>
+
+
+
+<% _.each(data, function(data) { %>				
+<div class="row">
+	<div class="col-md-4">
+	<div class="jumbotron span3 myResponsive customerInformation">
+	<div class="row">
+			<span><strong><p><%= polyglot.t(data.get('CustomerProfile').category1.name)  %></p></strong></span>
+		
+	</div>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered table-condensed table-nonfluid">
+			<tbody>
+
+				<% _.each((data.get('CustomerProfile').category1.details), function(user) { %>
+					<tr class="table_data">
+						<td><%= polyglot.t(user.name) %></td>
+						<td><%= polyglot.t(user.value) %></td>
+
+					</tr>
+        <% }); %>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+
+
+<div class="jumbotron span3 myResponsive accountInformation">
+	<span><strong><p><%= polyglot.t(data.get('CustomerProfile').category2.name)  %></p></strong></span>
+
+
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered table-condensed table-nonfluid">
+			<tbody>
+			<% _.each((data.get('CustomerProfile').category2.details), function(user) { %>
+					<tr class="table_data">
+						<td><%= polyglot.t(user.name) %></td>
+						<td><%= polyglot.t(user.value) %></td>
+
+					</tr>
+        <% }); %>	
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+
+<div class="col-md-8">
+	<div class="jumbotron span3 myResponsive">
+		<div class="row">
+			<span><strong><p><%= polyglot.t(data.get('CustomerProfile').category3.name)  %></p></strong></span>
+		</div>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered table-condensed table-nonfluid">
+			<thead>
+				<tr class="table_data">
+					<% _.each((data.get('CustomerProfile').category3.details), function(user) { %>
+						<th><%= polyglot.t(user.name) %></th>
+
+				
+        <% }); %>
+        		</tr>
+			</thead>
+
+			<tbody>
+				<% _.each((data.get('CustomerProfile').category3.details1), function(user) { %>
+					<tr class="table_data">
+						<td><%= polyglot.t(user.name) %></td>
+						<td><%= polyglot.t(user.value) %></td>
+						<td><%= polyglot.t(user.value1) %></td>
+						<td><%= polyglot.t(user.value2) %></td>
+						<td><%= polyglot.t(user.value3) %></td>
+						<td><%= polyglot.t(user.value4) %></td>
+						<td><%= polyglot.t(user.value5) %></td>
+					</tr>
+        <% }); %>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+</div>
+</div>
+<% }); %>

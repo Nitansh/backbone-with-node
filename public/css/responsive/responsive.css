@@ -1,0 +1,44 @@
+/** Responsive CSS**/
+
+@media (max-width: 768px) {
+
+	.myResponsive p{
+		margin-bottom: 5px;
+    	font-size: 10px ; 
+    	line-height: 1.4;
+	}
+	.myResponsive strong p{
+		margin-bottom: 5px;
+    	font-size: 12px ; 
+    	line-height: 1.4;
+    	margin-top:30px;
+	}
+
+	.myResponsive .table_data{
+		
+    	font-size: 10px; 
+ 
+	}
+
+
+
+}
+@media (min-width: 768px){
+
+	.myResponsive p{
+		margin-bottom: 10px;
+    	font-size: 15px; 
+    	line-height: 2;
+	}
+	.myResponsive .table_data{
+		
+    	font-size: 15px; 
+ 
+	}
+
+.Body {
+	margin-top: 40px;
+	padding-top: 15px;
+}
+
+}

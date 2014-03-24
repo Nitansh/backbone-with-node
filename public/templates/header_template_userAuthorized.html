@@ -1,0 +1,74 @@
+<style>
+    ul .dropdown-menu li a {
+     color:#fff;
+    }
+    .dropdown-menu {
+      background-color: #000;
+      color:#fff;
+    }
+    #RTL:hover {
+     background-color : #428bca !important;
+    }
+    #LTR:hover {
+      background-color : #428bca !important;
+    }
+    #English:hover {
+      background-color : #428bca !important;
+    }
+    #French:hover {
+      background-color : #428bca !important;
+    }
+    .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+      background-color : #428bca !important;
+      color: #fff !important;
+    }
+</style>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand"><%= polyglot.t(data[0].Company_Name) %></div>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <% _.each(data[0].Tab_Details , function(data){ %>
+            <li class = "tabs dropDownCollapse <%= data.Class %>"><a href=<%= data.Tab_Link%>> <%= polyglot.t(data.Tab_Name) %></a></li>
+            <% }); %>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                     <% _.each(data[0].DropDown_Buttons , function(data){ %>
+                     <li><a href=<%= data.Tab_Link%>> <%= polyglot.t(data.Tab_Name) %></a></li>
+                    <% }); %>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language Preferences<b class="caret"></b></a>
+               <ul class="dropdown-menu dropdown-manual">
+                  
+                  <li class="dropDownCollapse" id="English">English</li>
+                  <li class="dropDownCollapse" id="French">French</li>
+                 
+               </ul>
+            </li>
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">LTR/RTL Preferences<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                     <% _.each(data[0].DropDown_Buttons2 , function(data){ %>
+                     <li class="dropDownCollapse" id = <%= (data.Button_Name) %> > <%= polyglot.t(data.Button_Name) %></li>
+                    <% }); %>
+                  </ul>
+              </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
